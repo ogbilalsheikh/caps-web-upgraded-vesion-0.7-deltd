@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Series 05: The Thermal Artifact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#464747",
+                    "on-error": "#690005",
+                    "on-tertiary": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#e2e2e2",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#5d5f5f",
+                    "on-secondary-container": "#e3e2e2",
+                    "tertiary": "#e2e2e2",
+                    "inverse-on-surface": "#313030",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#ffffff",
+                    "surface-variant": "#353535",
+                    "secondary": "#c7c6c6",
+                    "on-secondary-fixed-variant": "#3a3c3c",
+                    "on-primary-container": "#000000",
+                    "primary-fixed": "#5d5f5f",
+                    "on-primary-fixed": "#ffffff",
+                    "on-background": "#e5e2e1",
+                    "tertiary-container": "#909191",
+                    "background": "#131313",
+                    "outline": "#919191",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary": "#1a1c1c",
+                    "on-surface": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#353535",
+                    "surface": "#131313",
+                    "secondary-fixed-dim": "#ababab",
+                    "surface-container": "#20201f",
+                    "on-tertiary-container": "#000000",
+                    "surface-tint": "#c6c6c7",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-fixed-dim": "#454747",
+                    "primary-container": "#d4d4d4",
+                    "tertiary-fixed": "#5d5f5f",
+                    "surface-bright": "#393939",
+                    "on-primary-fixed-variant": "#e2e2e2",
+                    "outline-variant": "#474747",
+                    "surface-dim": "#131313",
+                    "secondary-fixed": "#c7c6c6",
+                    "primary-fixed-dim": "#454747",
+                    "primary": "#ffffff",
+                    "on-surface-variant": "#c6c6c6",
+                    "on-secondary": "#1a1c1c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "0px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: #131313; color: #e5e2e1; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 h-20 bg-[#131313]/70 backdrop-blur-[32px] flex justify-between items-center px-10 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black tracking-[0.2em] text-white">SERIES 05</span>
+<div class="hidden md:flex gap-6 font-['Inter'] tracking-tight uppercase text-[10px] font-medium">
+<a class="text-white border-b border-white pb-1 hover:opacity-70 transition-opacity" href="#">COLLECTION</a>
+<a class="text-zinc-500 hover:text-white transition-colors duration-300 hover:opacity-70 transition-opacity" href="#">EDITORIAL</a>
+<a class="text-zinc-500 hover:text-white transition-colors duration-300 hover:opacity-70 transition-opacity" href="#">THE VAULT</a>
+<a class="text-zinc-500 hover:text-white transition-colors duration-300 hover:opacity-70 transition-opacity" href="#">ARCHIVE</a>
+</div>
+</div>
+<div class="flex items-center gap-4 text-white">
+<button class="hover:opacity-70 transition-opacity Active: scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+<button class="hover:opacity-70 transition-opacity Active: scale-[0.98] transition-transform md:hidden">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative w-full h-[1024px] min-h-[800px] flex items-end pb-24 px-10 bg-surface-container-lowest">
+<img alt="Series 05 Beanie" class="absolute inset-0 w-full h-full object-cover object-center opacity-60 mix-blend-luminosity" data-alt="A highly atmospheric, cinematic shot of a premium black knit beanie resting on a brutalist concrete slab. The lighting is low and dramatic, casting deep obsidian shadows and highlighting the intricate ribbed texture of the wool. The mood is structural, industrial, and deeply luxurious, perfectly aligned with the Monolithic Curator dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX4zxPtjiTO0-AlofBLRiJhkNLSAqSFaNPQyNXPHgZ3YVqRy3C8C84XAi1EtdDEKecru888tCnbgdU0CKb1_Xo2T09fQj3MdWxITPe7wuN8JajXkHCrfWrjn1BfTt6EW1aaq4uczDuFCDDOYPtkXcKOzirlgY4b_jjrK7fdp_RXvJEji426vKLsOZkE8-JzF3K5T7IgJxHBmTpTEHVkZUYb23qxaNRLKLZGK20GIPED0NWP6-Y9zUxpeTsOX6vt7SJ1r4HUXD9BDo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="relative z-10 max-w-[1200px]">
+<h1 class="font-display text-[clamp(3rem,8vw,6rem)] font-black leading-none tracking-[-0.04em] text-primary mb-6">
+                    SERIES 05:<br/>THE THERMAL ARTIFACT
+                </h1>
+<p class="font-body text-body-lg text-on-surface-variant max-w-xl">
+                    A study in heat retention and structural softness. Re-engineering the monolithic form for ultimate thermal efficiency.
+                </p>
+</div>
+</section>
+<!-- Current Artifacts Grid -->
+<section class="py-32 px-10 max-w-[1920px] mx-auto bg-surface">
+<div class="mb-24 flex justify-between items-end">
+<h2 class="font-headline text-5xl font-black tracking-tight text-primary">CURRENT ARTIFACTS</h2>
+<a class="font-label text-label-md tracking-[0.1em] text-primary border-b border-primary pb-1 hover:text-secondary transition-colors uppercase" href="#">View All Formats</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<article class="group cursor-pointer">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest relative overflow-hidden mb-6">
+<img alt="The Ribbed Monolith" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A high-contrast macro studio photograph of a heavily ribbed black beanie. The knit is thick and architectural, shot against a pitch-black background with a single surgical light source revealing the depth and tension of the weave. The image feels monolithic, heavy, and undeniably premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsTGR8F-pwSdJKK8emXxgseJtUzvddSZDBvizrUvvjNb8WQ_MVheAMudIoBCjWqqJVxUmM8qqKBPd0gbVhbb5oo3wvWKUw9MiO7u-YJvt0z2BSe0-rJrDoJYKdGG96PCuHMSKZB1hsRVvpFyqwYUo_cCGYsGqnt0PRKbbN4f5EObCe1yN9ZcMVPj85c3uBQOSBCYuHy5-kcFPCs8a1HpyqOad8k0uwwV0xIWn-oqO5sQkO3Y0LRE3HJyj2WdI325lZjmroEsNQQww"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-primary tracking-tight uppercase">THE RIBBED MONOLITH</h3>
+<span class="font-body text-lg text-on-surface-variant">$180</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Heavy-gauge architectural knit with reinforced tension.</p>
+</article>
+<!-- Card 2 -->
+<article class="group cursor-pointer">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest relative overflow-hidden mb-6">
+<img alt="The Cashmere Vault" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A highly detailed close-up of an ultra-fine black cashmere knit. The texture is smooth yet visibly luxurious, capturing the soft light in a dark void. The composition emphasizes thermal efficiency and high-end minimalism, adhering to the Monolithic Curator's dark, stark aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc_mOZ5BrHEXULj9q6IWeNNGdYXCCsWxnV08Unvk5_pBenKX67ujhUnNnQbimn4Eq8CECTYuie2Nt3JJii6qiuR5Ubz1jxG6tFAhNWq8ul4lre1N3lewRh2tqfSt_cFdLHM7MWlyahGfQxbTT0puQaxvOMZAcxK6vrhtOM1khxNWJumF0tvBtc0y0i-tnaDJc5aS52Q0HL8rZH3V0Xudp4xxdpBK5VbB-zFhzIjI_T0kf2XNsypsPZOCGAZZ7Jlc4lmGRw1TmdQaM"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-primary tracking-tight uppercase">THE CASHMERE VAULT</h3>
+<span class="font-body text-lg text-on-surface-variant">$240</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Ultra-fine luxury weave for maximum thermal efficiency.</p>
+</article>
+<!-- Card 3 -->
+<article class="group cursor-pointer">
+<div class="w-full aspect-[3/4] bg-surface-container-lowest relative overflow-hidden mb-6">
+<img alt="The Folded Column" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" data-alt="A striking profile view of a folded black beanie resting on dark obsidian glass. The double-layered cuff is prominent, creating a sense of structural volume and mass. The lighting is precise, cutting through the shadows to highlight the clean lines and stark silhouette of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmR7QR5yGLvREj3c6p_2Nr2BI4qY-dJhhr9hqATMALhhoNIVQDZdh3IzSVi6xd03XV1Ix_RJ2IegBuoj1fp8K36v1HCASxtLyyPWxhmcEOF8U_ZFpsEinc_W5-1bJDdT6wTFRH7jNla8TejqfTbVMrEXPvm0HpLUCKhiVIFKCGweB1H_Bqcac61zSwPHSkJgjsm2a9t7g6taELbNIUKWFXqtDaS3ERKqkxLU6g1AK56yPE-LavCixaasCHPAsjhsmLgGE57EQCAok"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl font-bold text-primary tracking-tight uppercase">THE FOLDED COLUMN</h3>
+<span class="font-body text-lg text-on-surface-variant">$160</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant">Double-layered cuff designed for structural volume.</p>
+</article>
+</div>
+</section>
+<!-- Engineering Section -->
+<section class="py-32 bg-surface-container-low w-full">
+<div class="max-w-[1920px] mx-auto px-10 flex flex-col lg:flex-row gap-24">
+<div class="lg:w-1/2 flex flex-col justify-center">
+<h2 class="font-headline text-5xl font-black tracking-tight text-primary mb-12 uppercase">ENGINEERING OF THE KNIT</h2>
+<div class="mb-12">
+<h4 class="font-label text-label-md tracking-[0.1em] text-primary mb-4 uppercase">THERMAL MASS</h4>
+<p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+                            We approached the beanie not as an accessory, but as an architectural insulator. By analyzing thermal retention properties of heavy-gauge yarns, we developed a knit structure that creates micro-pockets of trapped air, acting as an impenetrable barrier against harsh environmental conditions while maintaining breathability.
+                        </p>
+</div>
+<div>
+<h4 class="font-label text-label-md tracking-[0.1em] text-primary mb-4 uppercase">STRUCTURAL SOFTNESS</h4>
+<p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+                            The challenge of monolithic design in knitwear is balancing rigid form with necessary flexibility. Through advanced tension mapping during the weaving process, we achieved a silhouette that holds its structural integrity—a clean, brutalist line—while providing absolute comfort against the skin.
+                        </p>
+</div>
+</div>
+<div class="lg:w-1/2 relative h-[600px] bg-surface-container-lowest">
+<img alt="Engineering Texture" class="w-full h-full object-cover grayscale opacity-90 mix-blend-screen" data-alt="An extreme macro photograph of black textile fibers interwoven tightly. The image focuses on the technical engineering of the knit, resembling structural steel cables or architectural meshes rather than standard clothing. The stark, high-contrast lighting emphasizes the depth and complexity of the weave, aligning with the industrial luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVBws_2Comog2jLXeDNpVw_bo1JZbabtUzrWyDrP9DOSvq7b54EjPtYAb8uakD9xUyHg-akY0NjTE3ADgxyASQLd4WiBsYGJykjpDLe1mAE9MRWvdVQvsmSJbnaLQkOnVJG2uSugfpuawMAk36Kyz5CR6QRuaQqVQdfqRdWN3hehRgdU9cKXwo7NawvqgPW4KOpwEn5BaIyhsFi6bNAFSNkR3aAoUP9Tr9LdzGPmV1Pwed4iZK1-4Z7jWuema2OGKUUXYxo40WYWM"/>
+<div class="absolute inset-0 bg-surface/20 pointer-events-none"></div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-48 px-10 flex flex-col items-center justify-center bg-surface text-center">
+<h2 class="font-display text-4xl md:text-6xl font-black tracking-tighter text-primary mb-8 uppercase max-w-3xl">
+                ACCESS THE THERMAL ARCHIVE
+            </h2>
+<p class="font-body text-on-surface-variant mb-12 max-w-xl text-lg">
+                Register to acquire artifacts from Series 05 before general allocation.
+            </p>
+<form class="w-full max-w-md flex flex-col gap-6">
+<div class="relative w-full">
+<input class="w-full bg-surface-container-low border-0 border-b border-outline-variant/20 focus:border-primary text-primary px-4 py-4 font-body placeholder:text-on-surface-variant/50 focus:ring-0 transition-colors focus:bg-surface-container-high rounded-none uppercase text-sm tracking-wide" placeholder="ENTER SECURE COMM LINK (EMAIL)" type="email"/>
+</div>
+<button class="w-full bg-gradient-to-tr from-primary to-primary-container text-on-primary font-bold py-4 uppercase tracking-[0.1em] hover:opacity-90 transition-opacity rounded-none" type="button">
+                    REQUEST AUTHORIZATION
+                </button>
+</form>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full 0px radius py-24 bg-[#0E0E0E] flex flex-col items-center gap-12 px-10 max-w-[1920px] mx-auto transition-all">
+<span class="text-white font-bold tracking-widest text-xl">SERIES 05</span>
+<div class="flex gap-8 font-['Inter'] text-[10px] tracking-[0.1em] uppercase">
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">TERMS</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">PRIVACY</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">SHIPPING</a>
+<a class="text-zinc-600 hover:text-white transition-colors" href="#">CONTACT</a>
+</div>
+<div class="text-zinc-500 font-['Inter'] text-[10px] tracking-[0.1em] uppercase">
+            © 2024 THE MONOLITHIC CURATOR. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>

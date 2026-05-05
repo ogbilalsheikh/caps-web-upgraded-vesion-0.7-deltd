@@ -1,0 +1,580 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: white;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 1px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+.navIcons {
+    display: flex;
+    gap: 15px;
+}
+
+#store {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#menu {
+    display: none;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#slideBar {
+    display: none;
+}
+
+.Collections {
+    position: relative;
+}
+
+.Collections::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.dropdown {
+    list-style: none;
+    position: relative;
+}
+
+#Categories {
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#Categories:hover {
+    color: #ccc;
+}
+
+.dropdown-menu {
+    background: #fdfdfd;
+    border-radius: 2px;
+    position: absolute;
+    top: 190%;
+    list-style: none;
+    padding: 20px 15px;
+    display: none;
+    min-width: 160px;
+    z-index: 99999;
+}
+
+.dropdown-menu div {
+    display: flex;
+    gap: 17px;
+    flex-direction: column;
+}
+
+.dropdown-menu div a {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.dropdown-menu div a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 1px;
+    background: rgb(0, 0, 0);
+    transition: 0.3s ease;
+}
+
+.dropdown-menu div a:hover::after {
+    width: 100%;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+@media screen and (max-width: 754px) {
+
+    #menu {
+        font-size: 22px;
+    }
+
+    header {
+        padding: 20px 20px;
+    }
+
+    #store {
+        font-size: 22px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #close {
+        color: #000;
+        font-size: 19px;
+        cursor: pointer;
+    }
+
+    #slideBar {
+        display: block;
+        height: calc(100vh - 0px);
+        width: 100%;
+        z-index: 9999;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    #slideBar.active {
+        transform: translateX(0);
+    }
+
+    .dropdown-menu {
+        display: none;
+        background-color: #b6b6b62c;
+        border-radius: 5px;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+    }
+
+    #slideBar nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0%;
+        height: 1px;
+        background: rgb(0, 0, 0);
+        transition: 0.3s ease;
+    }
+
+    #slideBar nav a:hover::after {
+        width: 100%;
+    }
+
+    #slideBar nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    #slideBar nav a {
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .dropdown-menu {
+        border-radius: 2px;
+        top: 170%;
+        padding: 18px 5px;
+    }
+}
+
+.beanies-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDX4zxPtjiTO0-AlofBLRiJhkNLSAqSFaNPQyNXPHgZ3YVqRy3C8C84XAi1EtdDEKecru888tCnbgdU0CKb1_Xo2T09fQj3MdWxITPe7wuN8JajXkHCrfWrjn1BfTt6EW1aaq4uczDuFCDDOYPtkXcKOzirlgY4b_jjrK7fdp_RXvJEji426vKLsOZkE8-JzF3K5T7IgJxHBmTpTEHVkZUYb23qxaNRLKLZGK20GIPED0NWP6-Y9zUxpeTsOX6vt7SJ1r4HUXD9BDo");
+    min-height: 89vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.beanies-section div {
+    position: absolute;
+    bottom: 5%;
+    left: 4%;
+}
+
+.beanies-section div h1 {
+    font-size: 8vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 7vw;
+    margin-bottom: 10px;
+}
+
+.beanies-section div p {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.beanies-card-section {
+    padding: 20px 60px 100px 60px;
+    background-color: #0f0f0f;
+}
+
+.beanies-card-heading {
+    padding: 50px 0px;
+}
+.beanies-card-heading h1{
+    text-transform: uppercase;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+.beanies-card-heading p{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #c2c2c2;
+}
+.beanies-card-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.inner-box {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    flex: 1;
+    width: 100%;
+}
+
+.inner-box img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.inner-box:hover img {
+    filter: grayscale(0%);
+}
+.inner-box div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-box div h1 {
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.inner-box div h3 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.inner-box p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #e0e0e0;
+}
+
+.inner-box a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: fit-content;
+}
+
+.inner-box a::after {
+    content: "";
+    display: block;
+    padding: 2px;
+    border-bottom: 2px solid white;
+}
+
+.inner-box a:hover {
+    color: #c2c2c2;
+}
+
+#trucker-innerBox1 {
+    transform: translateY(25px);
+}
+
+#trucker-innerBox2 {
+    transform: translateY(50px);
+}
+
+.engineering-section {
+    background-color: #161616;
+    color: #fff;
+    padding: 80px 60px;
+}
+
+.engineering-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.engineering-text {
+    width: 50%;
+}
+
+.engineering-text h1 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.block {
+    margin-bottom: 10px;
+}
+
+.block h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.block p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+.engineering-image {
+    width: 50%;
+}
+
+.engineering-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+@media (max-width: 900px) {
+    .engineering-container {
+        flex-direction: column;
+    }
+
+    .engineering-text,
+    .engineering-image {
+        width: 100%;
+    }
+
+    .engineering-text h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .beanies-card-section {
+        padding: 20px 30px 80px 30px;
+    }
+
+    .beanies-card-box {
+        gap: 30px;
+    }
+
+    .inner-box {
+        flex: 1 1 calc(50% - 30px);
+    }
+
+    #trucker-innerBox1,
+    #trucker-innerBox2 {
+        transform: translateY(0); 
+    }
+}
+
+@media (max-width: 600px) {
+    .beanies-card-section {
+        padding: 20px 20px 60px 20px;
+    }
+
+    .beanies-card-heading h1 {
+        font-size: 26px;
+    }
+
+    .beanies-card-heading p {
+        font-size: 12px;
+    }
+
+    .beanies-card-box {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .inner-box {
+        width: 100%;
+    }
+
+    .inner-box div h1,
+    .inner-box div h3 {
+        font-size: 15px;
+    }
+
+    .inner-box p {
+        font-size: 13px;
+    }
+}
+
+.footer {
+    padding: 70px 10% 30px;
+    border-top: 1px solid #222;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    font-size: 13px;
+    color: #888;
+}
+
+.footer-links h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    display: block;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #666;
+}
+
+@media (max-width: 992px) {
+
+    .footer-top {
+        gap: 55px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-top {
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .footer {
+        padding: 50px 5% 20px;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
+    }
+}
